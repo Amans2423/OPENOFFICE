@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Office Tools – Writer, Calc, Impress (Olympiad Concepts + Quiz)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6fb;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #1d3557;
+    }
+
+    h2 {
+      border-left: 5px solid #457b9d;
+      padding-left: 10px;
+      margin-top: 25px;
+      color: #1d3557;
+    }
+
+    ul {
+      margin-left: 20px;
+      line-height: 1.6;
+    }
+
+    .section {
+      background: #f8fbff;
+      padding: 12px 18px;
+      border-radius: 10px;
+      margin-top: 10px;
+      border: 1px solid #e3e9f5;
+    }
+
+    /* QUIZ */
+    .question-card {
+      margin: 12px 0;
+      padding: 12px;
+      border-radius: 8px;
+      background: #f9fbff;
+      border: 1px solid #dce6ff;
+    }
+    .question-card.correct { background: #e6ffe8; border-color: #47c160; }
+    .question-card.incorrect { background: #ffeaea; border-color: #ff6363; }
+
+    .feedback { margin-top: 5px; font-size: 14px; }
+    .feedback.correct-text { color: #2b8a3e; }
+    .feedback.incorrect-text { color: #b00020; }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #457b9d;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #1d3557;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #1d3557;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>Office Tools – Concepts + Olympiad Level Quiz</h1>
+
+<!-- SECTION 1 -->
+<h2>1. Licensed, Proprietary and Open-Source Software</h2>
+<div class="section">
+<ul>
+<li><b>Licensed Software:</b> Paid software; you must buy a license to use it (e.g., MS Office).</li>
+<li><b>Proprietary Software:</b> Owned by a company; source code not available.</li>
+<li><b>Open-Source Software:</b> Free to use; source code available (e.g., OpenOffice, LibreOffice).</li>
+<li><b>Freeware:</b> Free to use but cannot modify (e.g., Adobe Reader).</li>
+<li><b>Shareware:</b> Trial version, limited time use.</li>
+<li><b>Examples in real life:</b> Linux (open-source), Windows (proprietary), VLC player (open-source).</li>
+</ul>
+</div>
+
+<!-- SECTION 2 -->
+<h2>2. Writer (Word Processor)</h2>
+<div class="section">
+<ul>
+<li>Create text documents (letters, reports, assignments).</li>
+<li>Saving in multiple formats (.odt, .docx, .pdf).</li>
+<li><b>Formatting:</b> Bold, Italic, Underline, Font size, Alignment.</li>
+<li><b>Page formatting:</b> Margins, Header, Footer, Page numbering.</li>
+<li><b>Printing options:</b> Print all pages, selected pages, preview.</li>
+<li><b>Mail Merge:</b> Auto-filling names & data into letters.</li>
+<li><b>Toolbars:</b> Standard, Formatting, Table toolbar.</li>
+<li><b>Shortcut keys:</b> Ctrl+S (Save), Ctrl+P (Print), Ctrl+B (Bold), Ctrl+Z (Undo).</li>
+</ul>
+</div>
+
+<!-- SECTION 3 -->
+<h2>3. CALC (Spreadsheet)</h2>
+<div class="section">
+<ul>
+<li><b>Cell:</b> Single box in spreadsheet.</li>
+<li><b>Cell Address:</b> Column letter + Row number (e.g., A1, C5).</li>
+<li><b>Formula:</b> Begins with '=' sign.</li>
+<li><b>Common formulas:</b> =SUM(A1:A5), =AVERAGE(B1:B4).</li>
+<li><b>Formatting:</b> Borders, background color, number formats.</li>
+<li><b>Toolbars:</b> Formula bar, Standard toolbar, Formatting toolbar.</li>
+<li>Charts/Graphs can be created from data.</li>
+</ul>
+</div>
+
+<!-- SECTION 4 -->
+<h2>4. Impress (Presentation Software)</h2>
+<div class="section">
+<ul>
+<li><b>Slide:</b> One page in a presentation.</li>
+<li><b>Transitions:</b> Animation effects applied between slides.</li>
+<li><b>Views:</b> Normal view, Slide sorter, Slide show view.</li>
+<li><b>Shortcuts:</b> F5 (Start slideshow), Ctrl+M (New slide).</li>
+<li><b>Saving, Opening, Closing:</b> Save → .odp or .pptx.</li>
+<li><b>Toolbars:</b> Slides pane, Tasks pane, Formatting, Drawing toolbar.</li>
+<li><b>Printing:</b> Print slides, handouts, notes.</li>
+</ul>
+</div>
+
+<!-- QUIZ SECTION -->
+<h2>50 Questions – MCQ Quiz</h2>
+
+<div id="quiz"></div>
+
+<button onclick="submitQuiz()">Submit Quiz</button>
+<button onclick="resetQuiz()">Reset</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+const quizData = [
+  {q:"1. Which software type allows full access to modify its code?",o:["Licensed","Proprietary","Open-Source","Shareware"],a:2},
+  {q:"2. MS Office is an example of:",o:["Open-Source","Freeware","Proprietary","Shareware"],a:2},
+  {q:"3. LibreOffice is:",o:["Paid software","Proprietary","Open-Source","Shareware"],a:2},
+  {q:"4. A trial version of software is called:",o:["Freeware","Open-Source","Shareware","Licensed"],a:2},
+  {q:"5. Ctrl + S is used for:",o:["Save","Print","Cut","Paste"],a:0},
+  {q:"6. Writer saves default files as:",o:[".docx",".txt",".odt",".pdf"],a:2},
+  {q:"7. What is Mail Merge used for?",o:["Charts","Letters with auto-inserted data","Slides","Animations"],a:1},
+  {q:"8. Which toolbar shows fonts & sizes?",o:["Standard","Formatting","Status bar","Title bar"],a:1},
+  {q:"9. Shortcut for Bold:",o:["Ctrl+U","Ctrl+B","Ctrl+M","Ctrl+Shift+B"],a:1},
+  {q:"10. Print Preview is used to:",o:["Edit text","Check layout before printing","Insert pictures","Save document"],a:1},
+
+  {q:"11. A spreadsheet cell address is:",o:["Row+Column","Letter+Number","Number+Letter","Only number"],a:1},
+  {q:"12. Formula begins with:",o:["+", "-", "=", "*"],a:2},
+  {q:"13. SUM function is used for:",o:["Multiplication","Addition","Power","Division"],a:1},
+  {q:"14. A group of cells is called:",o:["Block","Range","Sheet","Cluster"],a:1},
+  {q:"15. Calc file extension:",o:[".ods",".docx",".xlsx",".pptx"],a:0},
+  {q:"16. The bar used to type formulas:",o:["Menu bar","Formula bar","Title bar","Status bar"],a:1},
+  {q:"17. A spreadsheet intersection is:",o:["Row","Column","Cell","Page"],a:2},
+  {q:"18. Chart allows:",o:["Playing music","Visual data display","Printing images","Text only"],a:1},
+  {q:"19. Shortcut for new spreadsheet:",o:["Ctrl+N","Ctrl+Shift+N","Ctrl+Alt+N","Shift+N"],a:0},
+  {q:"20. =AVERAGE(10,20,30) gives:",o:["20","30","10","60"],a:0},
+
+  {q:"21. Presentation slides are created in:",o:["Writer","Impress","Calc","Paint"],a:1},
+  {q:"22. Slide transition means:",o:["New slide","Effect between slides","Font change","Printing"],a:1},
+  {q:"23. Shortcut to run slideshow:",o:["Ctrl+S","Ctrl+M","F5","Shift+F5"],a:2},
+  {q:"24. Slide sorter view shows:",o:["Full screen","Slides in grid","Only one slide","Toolbar"],a:1},
+  {q:"25. Impress default extension:",o:[".ppt",".odp",".odt",".pptm"],a:1},
+  {q:"26. Insert new slide with:",o:["Ctrl+M","Ctrl+Shift+S","Alt+N","Ctrl+Alt+M"],a:0},
+  {q:"27. Notes in slides are used by:",o:["Audience","Presenter","System","Camera"],a:1},
+  {q:"28. Slide background change is in:",o:["Format menu","Insert menu","Tools menu","View menu"],a:0},
+  {q:"29. Animation is applied to:",o:["Text or objects","Only images","Only headings","Only bullets"],a:0},
+  {q:"30. Handouts print:",o:["Only text","Multiple slides per page","Only images","Only tables"],a:1},
+
+  {q:"31. Licensed software means:",o:["Open for all","Requires purchase","Trial only","Only for mobile"],a:1},
+  {q:"32. OpenOffice is:",o:["Paid","Closed source","Open-Source","Not software"],a:2},
+  {q:"33. Writer is used for:",o:["Math","Slides","Text documents","Music"],a:2},
+  {q:"34. Header appears on:",o:["Bottom","Top of page","Left only","Right only"],a:1},
+  {q:"35. CALC handles:",o:["Text only","Numbers & formulas","Videos","Code"],a:1},
+  {q:"36. Column label B and row 10 means:",o:["B9","10B","B10","BB10"],a:2},
+  {q:"37. Impress is similar to:",o:["MS Excel","MS PowerPoint","MS Word","MS Paint"],a:1},
+  {q:"38. In mail merge, data table is called:",o:["File","Database","Sheet","Form"],a:1},
+  {q:"39. Which is NOT a spreadsheet formula?",o:["=SUM()","=AVERAGE()","=FONT()","=MAX()"],a:2},
+  {q:"40. Which shows slide thumbnails?",o:["Task Pane","Slides Pane","Toolbar","Sidebar"],a:1},
+
+  {q:"41. Writer alignment shortcut Ctrl+E means:",o:["Left","Center","Right","Justify"],a:1},
+  {q:"42. Formula for total of A1 to A5:",o:["=TOTAL(A1-A5)","=SUM(A1:A5)","=ADD(A1,A5)","=A1+A5+"],a:1},
+  {q:"43. Presentation full-screen is:",o:["Normal View","Slide Sorter","Slide Show","Edit View"],a:2},
+  {q:"44. Document red underline means:",o:["Grammar error","Picture size","Border","Format error"],a:0},
+  {q:"45. Calc sheet tab appears:",o:["Center","Bottom","Top","Left"],a:1},
+  {q:"46. Impress text box is inserted from:",o:["View","Tools","Insert","File"],a:2},
+  {q:"47. Writer table is inserted from:",o:["Tools","Insert","Format","Slide"],a:1},
+  {q:"48. Spreadsheet default rows × columns approx:",o:["1×1","100×100","1000×100","Millions"],a:3},
+  {q:"49. Software that is free + source visible:",o:["Proprietary","Open-Source","Shareware","Trialware"],a:1},
+  {q:"50. Impress transition speed is found in:",o:["Slide transition panel","File menu","Format menu","Tools panel"],a:0}
+];
+
+function loadQuiz() {
+  const quiz = document.getElementById("quiz");
+  quiz.innerHTML = "";
+  quizData.forEach((item, i) => {
+    const div = document.createElement("div");
+    div.className = "question-card";
+    div.dataset.index = i;
+
+    div.innerHTML = `
+      <p><b>${item.q}</b></p>
+      ${item.o.map((opt, idx) =>
+        `<label><input type="radio" name="q${i}" value="${idx}"> ${opt}</label><br>`
+      ).join("")}
+    `;
+
+    quiz.appendChild(div);
+  });
+}
+
+function submitQuiz() {
+  let score = 0;
+  const quiz = document.getElementById("quiz");
+
+  document.querySelectorAll(".feedback").forEach(e => e.remove());
+  document.querySelectorAll(".question-card").forEach(e => {
+    e.classList.remove("correct","incorrect");
+  });
+
+  quizData.forEach((item, i) => {
+    const qCard = document.querySelector(`.question-card[data-index="${i}"]`);
+    const chosen = document.querySelector(`input[name="q${i}"]:checked`);
+    const fb = document.createElement("div");
+    fb.className = "feedback";
+
+    if (!chosen) {
+      fb.textContent = "Not answered.";
+      fb.classList.add("incorrect-text");
+      qCard.classList.add("incorrect");
+    } else if (parseInt(chosen.value) === item.a) {
+      score++;
+      fb.textContent = "Correct!";
+      fb.classList.add("correct-text");
+      qCard.classList.add("correct");
+    } else {
+      fb.textContent = "Incorrect. Correct answer: " + item.o[item.a];
+      fb.classList.add("incorrect-text");
+      qCard.classList.add("incorrect");
+    }
+    qCard.appendChild(fb);
+  });
+
+  const result = document.getElementById("result");
+  result.style.display = "block";
+  result.textContent = `Your Score: ${score} / 50`;
+}
+
+function resetQuiz() {
+  document.querySelectorAll("input[type=radio]").forEach(e => e.checked = false);
+  document.querySelectorAll(".feedback").forEach(e => e.remove());
+  document.querySelectorAll(".question-card").forEach(e => {
+    e.classList.remove("correct","incorrect");
+  });
+  document.getElementById("result").style.display = "none";
+}
+
+loadQuiz();
+</script>
+
+</body>
+</html>
